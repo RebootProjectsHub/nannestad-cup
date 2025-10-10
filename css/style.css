@@ -1,0 +1,220 @@
+/* ========== VARIABLES ========== */
+
+:root {
+  /* Colors */
+  --color-bg-dark: #0d1b2a;
+  --color-text-dark: #0d1b2a; 
+  --color-bg-light: #f8f8f8;
+  --color-text-light: #ffffff; 
+  --color-accent: #f7c9a7;
+  --color-hover: var(--color-accent);
+
+  /* Sizes */
+  --container-max-width: 1200px;
+  --container-padding: 20px;
+
+  /* Typography */
+  --font-size-body: 1.25rem;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Border radius */
+  --border-radius-img: 10px;
+  --border-radius-card: 10px;
+  --border-radius-btn: 25px;
+
+}
+
+/* ========== GLOBAL STYLES ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* ========== GLOBAL UTILITIES ========== */
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-block-end: 1rem;
+}
+
+.section-intro {
+  margin-block-end: 2rem;
+}
+
+.btn--primary {
+  display: inline-block;
+  max-width: 200px;
+  text-align: center;
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-btn);
+}
+
+/* ========== HEADER COMPONENT ========== */
+.header {
+  background: var(--color-bg-dark);
+  z-index: 100;
+  color: #ffffff;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  min-height: 5rem;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__list {
+  display: flex;
+  gap: 2rem;
+}
+
+.header__link {
+  padding: 5px;
+}
+
+/* ========== HERO COMPONENT ========== */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url(../assets/img/hero-ball.jpg) center/cover no-repeat;
+  color: var(--color-text-light);
+  text-align: center;
+  padding-block-start: 10%;
+}
+
+.hero__inner {
+  max-width: 900px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero__title {
+  font-size: 5rem;
+}
+
+/* ========== ABOUT COMPONENT ========== */
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.about__actions {
+  margin-block-start: 2rem;
+  text-align: center;
+}
+
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border-radius: var(--border-radius-card);
+  padding: 2rem;
+}
+
+/* ========== FESTIVAL COMPONENT ========== */
+.festival {
+  background: var(--color-bg-light);
+}
+
+/* ========== FEATURE (CrazyRace) COMPONENT ========== */
+.feature__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.feature__image {
+  border-radius: var(--border-radius-img);
+  aspect-ratio: 1.1;
+  object-fit: cover;
+}
+
+/* ========== CONTACT COMPONENT ========== */
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact__map iframe {
+  border-radius: var(--border-radius-img);
+}
+
+/* ========== PARTNERS COMPONENT ========== */
+.partners {
+  background: var(--color-bg-light);
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ========== FOOTER COMPONENT ========== */
+.footer {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding-block: 3rem;
+}
