@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
 <body>
   <header class="header header--sticky" data-header>
     <div class="container">
-      <div style="color: black;" class="header__inner">
+      <div class="header__inner">
         <a class="header__brand" href="index.html" aria-label="NannestadCup – Forside">
           <img class="header__logo" width="60px" src="./assets/img/logo_upd.png" alt="NannestadCup">
           <!-- <span class="header__title">NannestadCup</span> -->
@@ -27,23 +27,25 @@
         <nav class="header__nav" id="primary-nav" aria-label="Hovedmeny">
           <ul class="header__list">
             <li class="header__item header__item--has-submenu">
-              <a class="header__link" href="#" aria-haspopup="true" aria-expanded="false">Informasjon</a>
+              <a class="header__link" href="#" aria-haspopup="true" aria-expanded="false">Om turneringen</a>
               <i class="fa-light fa-chevron-down"></i>
               <ul class="header__submenu">
                 <li class="header__submenu-item">
-                  <a href="#" class="header__submenu-link">Praktisk info</a>
+                  <a href="./informasjon.html" class="header__submenu-link">Praktisk informasjon</a>
                 </li>
                 <li class="header__submenu-item">
-                  <a href="#" class="header__submenu-link">Overnatting</a>
+                  <a href="./cupreglement.html" class="header__submenu-link">Cupreglement</a>
+                </li>
+                <li class="header__submenu-item">
+                  <a href="#" class="header__submenu-link">Dommere</a>
                 </li>
               </ul>
             </li>
-            <li class="header__item"><a class="header__link" href="#">Program</a></li>
-            <li class="header__item"><a class="header__link" href="#">Turneringsreglement</a></li>
+            <li class="header__item"><a class="header__link" href="./program-og-aktiviteter.html">Program og aktiviteter</a></li>
             <li class="header__item"><a class="header__link" href="#">Påmelding</a></li>
           </ul>
         </nav>
-        <a class="header__cta header__cta--contact btn--primary" href="#">
+        <a class="header__cta header__cta--contact btn--primary" href="./kontakt.html">
           Kontakt oss
         </a>
 
@@ -51,6 +53,12 @@
     </div>
   </header>
   <main>
+    <section class="hero hero--sub hero--informasjon">
+      <div class="container">
+        <div class="hero__inner">
+          <h1 class="hero__title hero-title--sub">Kontakt</h1>
+        </div>
+    </section>
     <section style="margin-top: 50px;" class="contact section">
       <div class="container">
         <div class="contact__inner">
@@ -64,7 +72,11 @@
             </p>
             <p class="contact__name">Nannestad IL Håndball</p>
             <p><i class="fa-solid fa-envelope"></i>post@nannestadil.no</p>
-            <p><i class="fa-solid fa-location-dot"></i>Smedstuvegen 6, Nannestad</p>
+            <p><i class="fa-solid fa-location-dot"></i>
+              Nannestad IL<br>
+              Smedstuvegen 6<br>
+              Postboks 165<br>
+              2030 Nannestad</p>
           </div>
         </div>
       </div>

@@ -5,3 +5,14 @@ window.addEventListener("scroll", () => {
       } else {
         header.classList.remove("header--scrolled");
 }});
+
+const toggles = document.querySelectorAll('.rules__toggle');
+toggles.forEach(btn => {
+btn.addEventListener('click', () => {
+const content = document.getElementById(btn.getAttribute('aria-controls'));
+const expanded = btn.getAttribute('aria-expanded') === 'true';
+btn.setAttribute('aria-expanded', !expanded);
+content.hidden = expanded;
+btn.textContent = expanded ? '+' : '–';
+});
+});
