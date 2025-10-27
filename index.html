@@ -27,6 +27,11 @@
           <img class="header__logo" width="60px" src="./assets/img/logo_upd.png" alt="NannestadCup">
           <!-- <span class="header__title">NannestadCup</span> -->
         </a>
+        <!-- <button class="header__burger" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </button> -->
         <nav class="header__nav" id="primary-nav" aria-label="Hovedmeny">
           <ul class="header__list">
             <li class="header__item header__item--has-submenu">
@@ -34,7 +39,7 @@
               <i class="fa-light fa-chevron-down"></i>
               <ul class="header__submenu">
                 <li class="header__submenu-item">
-                  <a href="./praktisk-informasjon.html" class="header__submenu-link">Praktisk info</a>
+                  <a href="./praktisk-info.html" class="header__submenu-link">Praktisk info</a>
                 </li>
                 <li class="header__submenu-item">
                   <a href="./regler.html" class="header__submenu-link">Regler</a>
@@ -75,7 +80,7 @@
           <h2 class="about__title section-title">Velkommen til Nannestad Cup 2026!</h2>
           <!-- <img class="about__background-image" src="./assets/img/ball.png" alt=""> -->
           <div class="about__intro section-intro">En helg fylt med håndballglede, festival og aktiviteter for hele familien.</div>
-          <div class="about__grid">
+          <!-- <div class="about__grid">
             <div class="about__card">
               <span class="about__card-icon">🏆</span>
               <h3 class="about__card-title">Mange klasser</h3>
@@ -96,15 +101,49 @@
               <h3 class="about__card-title">Overnatting</h3>
               <p class="about__card-text">Mulighet for skoleovernatting for lag som ønsker.</p>
             </div>
-          </div>
-          <div class="about__actions">
-            <a class="about__cta btn--primary" href="./pages/informasjon.html">
+          </div> -->
+          <section class="about__cards">
+            <a class="about__card" href="./praktisk-info.html">
+              <div class="about__card-bg" style="background-image: url('./assets/img/handball2.png')"></div>
+              <div class="about__card-overlay"></div>
+              <div class="about__card-content">
+                <h3 class="about__card-title">Praktisk info</h3>
+              </div>
+            </a>
+            <a class="about__card" href="./program-og-aktiviteter.html">
+              <div class="about__card-bg" style="background-image: url('./assets/img/handball1.png')"></div>
+              <div class="about__card-overlay"></div>
+              <div class="about__card-content">
+                <h3 class="about__card-title">Program og aktiviteter</h3>
+              </div>
+            </a>
+            <a class="about__card" href="./regler.html">
+              <div class="about__card-bg" style="background-image: url('./assets/img/NNCup2.jpg')"></div>
+              <div class="about__card-overlay"></div>
+              <div class="about__card-content">
+                <h3 class="about__card-title">Regler</h3>
+              </div>
+            </a>
+            <a class="about__card" href="./praktisk-info.html#signup">
+              <div class="about__card-bg" style="background-image: url('./assets/img/hero-ball3.jpg')"></div>
+              <div class="about__card-overlay"></div>
+              <div class="about__card-content">
+                <h3 class="about__card-title">Påmelding</h3>
+              </div>
+            </a>
+          </section>
+
+
+          <!-- <div class="about__actions">
+            <a class="about__btn btn--primary" href="./pages/informasjon.html">
               Les mer
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
+
+
 
     <section class="classes section">
       <div class="container">
@@ -196,7 +235,7 @@
               Samtidig med Nannestad Cup arrangeres Nannestadfestivalen. Her er det mye moro som skjer for liten og stor hele helgen.
             </p>
             <div class="festival__actions">
-              <a class="festival__cta btn--primary" href="#">
+              <a class="festival__btn btn--primary" href="#">
                 Sjekk ut programmet
               </a>
             </div>
@@ -214,7 +253,7 @@
               Et morsomt hinderløp for alle deltakere! Alle påmeldte spillere i Nannestad Cup får 50 % rabatt.
             </p>
             <div class="feature__actions">
-              <a class="feature__cta btn--primary" href="#">
+              <a class="feature__btn btn--primary" href="#">
                 Les mer
               </a>
             </div>

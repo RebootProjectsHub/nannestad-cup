@@ -34,7 +34,7 @@
               <i class="fa-light fa-chevron-down"></i>
               <ul class="header__submenu">
                 <li class="header__submenu-item">
-                  <a href="./praktisk-informasjon.html" class="header__submenu-link">Praktisk info</a>
+                  <a href="./praktisk-info.html" class="header__submenu-link">Praktisk info</a>
                 </li>
                 <li class="header__submenu-item">
                   <a href="./regler.html" class="header__submenu-link">Regler</a>
@@ -159,26 +159,26 @@
     <section class="page-nav">
       <div class="container">
         <div class="page-nav__grid">
-          <a href="#pamelding" class="page-nav__item">
+          <a href="#signup" class="page-nav__item">
             <i class="page-nav__icon fa-light fa-calendar-lines-pen"></i>
             <span class="page-nav__label">Påmelding og deltakerkort</span>
           </a>
-          <a href="#pamelding" class="page-nav__item">
+          <a href="#venues" class="page-nav__item">
             <i class="page-nav__icon fa-light fa-court-sport"></i>
             <span class="page-nav__label">Spillesteder</span>
           </a>
-          <a href="#pamelding" class="page-nav__item">
+          <a href="#accommodation" class="page-nav__item">
             <i class="page-nav__icon fa-light fa-house-chimney-window"></i>
             <span class="page-nav__label">Overnatting og mat</span>
           </a>
-          <a href="#pamelding" class="page-nav__item">
+          <a href="#parking" class="page-nav__item">
             <i class="page-nav__icon fa-light fa-car-bus"></i>
             <span class="page-nav__label">Parkering</span>
           </a>
         </div>
       </div>
     </section>
-    <section class="signup section">
+    <section class="signup section" id="signup">
       <div class="container">
         <div class="signup__inner">
           <h2 class="signup__title section-title">Påmelding og deltakerkort</h2>
@@ -228,7 +228,7 @@
         </div>
       </div>
     </section>
-    <section class="venues section">
+    <section class="venues section" id="venues">
       <div class="container">
         <div class="venues__inner">
           <iframe class="venues__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d785.5300417401742!2d11.01766709674795!3d60.21791687502024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464184aa1aabb30f%3A0x67fbfb792f2015d8!2sNannestadhallen!5e0!3m2!1sen!2sno!4v1761140881952!5m2!1sen!2sno" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -236,95 +236,87 @@
 
           <div class="venues__content">
             <h2 class="venues__title section-title">Spillesteder</h2>
-            <p class="venues__intro">Alle kamper spilles ved Nannestadhallen og Sports Field i sentrum. Alle spillesteder
-              ligger i kort gangavstand, og det er godt med parkering i området.</p>
-            <div class="venues__content-grid">
-              <div class="venues__card">
-                <div class="venues__card-grid">
-                  <div class="venues__card-info">
-                    <h3>Nannestadhallen</h3>
-                    <p class="venues__meta">Smedstuvegen 6, Nannestad</p>
-                    <ul class="venues__tags">
-                      <li class="venues__tags-item">Inne</li>
-                      <li class="venues__tags-item">Garderober</li>
-                      <li class="venues__tags-item">Kiosk</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- <a class="btn--primary" target="_blank" href="https://maps.google.com/?q=Smedstuvegen+6,2030+Nannestad">Vis på kart →</a> -->
-              </div>
-
-              <div class="venues__card">
-                <div class="venues__card-grid">
-                  <div class="venues__card-info">
-                    <h3>Idrettparken ved Nannestadhallen</h3>
-                    <p class="venues__meta"><span>3 min gang fra Nannestadhallen</span></p>
-                    <ul class="venues__tags">
-                      <li class="venues__tags-item">Inne</li>
-                      <li class="venues__tags-item">Garderober</li>
-                      <li class="venues__tags-item">Kiosk</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- <a class="btn--primary" target="_blank" href="https://maps.google.com/?q=Smedstuvegen+6,2030+Nannestad">Vis på kart →</a> -->
-              </div>
-            </div>
+            <p class="venues__intro">Alle kamper spilles ved Nannestadhallen og Sports Field.
+              Spillestedene ligger i kort gangavstand, og det er godt med parkering i området.</p>
+            <ul class="venues__list">
+              <li class="venues__list-item">
+                <p class="venues__name">Nannestadhallen</p>
+                <p class="venues__location"><i class="fa-light fa-location-dot"></i>Smedstuvegen 6, 2030 Nannestad</p>
+              </li>
+              <li class="venues__list-item">
+                <p class="venues__name">Idrettsparken ved Nannestadhallen</p>
+                <p class="venues__location"><i class="fa-light fa-location-dot"></i>3 min gange fra Nannestadhallen</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-    <section class="accommodation section">
+    <section class="accommodation section" id="accommodation">
       <div class="container">
         <div class="accommodation__inner">
           <h2 class="accommodation__title section-title">Overnatting og mat</h2>
           <div class="accommodation__content">
             <div class="accommodation__card">
-              <!-- <i class="accommodation__card-icon fa-light fa-bed"></i> -->
-              <h3 class="accommodation__card-title">Overnatting</h3>
-              <p>
-                Lagene kan bo på lokale skoler i nærheten av cupområdet. Hvert lag får sitt eget klasserom,
-                og deltakerne må ta med liggeunderlag, sovepose og nødvendig utstyr for overnatting.
-                Det vil være nattevakter på plass gjennom hele helgen for å sikre trygghet og ro.
-              </p>
-              <p>
-                Skolene ligger i kort gangavstand til banene og Nannestadhallen.
-                Det vil bli gitt nærmere informasjon om hvilken skole hvert lag blir tildelt i god tid før turneringen starter.
-              </p>
+              <div class="accommodation__top">
+                <i class="accommodation__card-icon fa-regular fa-bed"></i>
+                <h3 class="accommodation__card-title">Overnatting</h3>
+              </div>
+              <div class="accommodation__card-text">
+                <p>
+                  For lag som ønsker å være med på hele cuphelgen, tilbyr vi overnatting på lokale skoler i nærheten av cupområdet.
+                  Hvert lag får sitt eget klasserom, og deltakerne tar med liggeunderlag og sovepose.
+                </p>
+                <p>
+                  Alt ligger i kort gangavstand til baner, Nannestadhallen og festivalområdet, slik at dere har alt dere trenger rett i nærheten – både fotball, mat og moro.
+                </p>
+              </div>
             </div>
-
             <div class="accommodation__card">
-              <!-- <i class="accommodation__card-icon fa-light fa-utensils"></i> -->
-              <h3 class="accommodation__card-title">Mat</h3>
-              <p>
-                Frokost serveres på skolene for lag som bor der. I tillegg finnes det kiosker og matboder
-                ved Nannestadhallen og turneringsområdet, med varme retter, baguetter, snacks, frukt og drikke
-                til rimelige priser.
-              </p>
-              <p>
-                Det vil også tilbys vegetariske alternativer og glutenfrie måltider.
-                Kioskene holder åpent fra tidlig morgen til sen ettermiddag.
-              </p>
+              <div class="accommodation__top">
+                <i class="accommodation__card-icon fa-regular fa-utensils"></i>
+                <h3 class="accommodation__card-title">Mat</h3>
+              </div>
+              <div class="accommodation__card-text">
+                <p>
+                  Gjennom hele cuphelgen er det mulig å kjøpe mat og drikke ved Nannestadhallen og banene.
+                  Her finner du varme retter, baguetter, snacks, frukt og drikke til hyggelige priser.
+                </p>
+                <p>
+                  For overnattingslag serveres frokost på skolene, og vi tilbyr vegetariske og glutenfrie alternativer.
+                </p>
+              </div>
+
             </div>
 
           </div>
         </div>
       </div>
     </section>
-    <section class="parking section">
+
+    <section class="parking section" id="parking">
       <div class="container">
         <div class="parking__inner">
-          <h2 class="parking__title section-title">Parkering</h2>
-          <div class="parking__text">
-            Det er rikelig med parkeringsplasser. <br>
-            Følgende steder kan benyttes: <br>
-            <ul class="parking__list">
-              <li>Preståsen barneskole – (i kartet merket P3)</li>
-              <li>Nannestad videregående skole – (i kartet merket P2)</li>
-              <li>KIWI Nannestad – (I kartet merket P1)</li>
-              <li>Parkering koster kr 100</li>
-            </ul>
-            <a class="btn--primary" href="./assets/Parkering_Nannestad-1.pdf" target="_blank" rel="noopener">Se parkeringskart</a>
+          <div class="parking__grid">
+            <div class="parking__grid-item">
+              <h2 class="parking__title section-title">Parkering</h2>
+              <div class="parking__text">
+                <p class="parking__intro">Det er rikelig med parkeringsplasser i nærheten av Nannestadhallen. Alle parkeringsområder ligger i kort gangavstand til cupområdet.
+                </p>
+                <ul class="parking__list">
+                  <li class="parking__list-item">Preståsen barneskole – (i kartet merket P3)</li>
+                  <li class="parking__list-item">Nannestad videregående skole – (i kartet merket P2)</li>
+                  <li class="parking__list-item">KIWI Nannestad – (I kartet merket P1)</li>
+                </ul>
+                <div class="parking__note"><i class="parking__note-icon fa-regular fa-circle-info"></i>Parkering koster kr 100 per dag – inkluderer gratis inngang til hinderet «CrazyCOMBO».</div>
+              </div>
+              <a class="parking__btn btn--primary" href="./assets/Parkering_Nannestad-1.pdf" target="_blank" rel="noopener">Se parkeringskart</a>
+
+            </div>
+            <div class="parking__grid-item"><img class="parking__image" src="./assets/img/parking.jpg" alt=""></div>
           </div>
+
+
         </div>
       </div>
     </section>
