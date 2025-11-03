@@ -1054,9 +1054,9 @@ li {
   margin-block-end: 1.5rem;
 }
 
-.activity-item__info {
-  /* margin-block-end: 1.5rem; */
-}
+/* .activity-item__info {
+  margin-block-end: 1.5rem;
+} */
 
 .activity-item__text {
   padding: 2rem;
