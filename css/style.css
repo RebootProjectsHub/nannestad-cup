@@ -331,7 +331,7 @@ li {
 
 .hero--frontpage {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
-              url(../assets/img/hero-ball_compressed.jpg) 50% 40%/cover no-repeat;
+              url(../assets/img/hero-ball3.jpg) 50% 100%/cover no-repeat;
 }
 
 .hero--sub {
