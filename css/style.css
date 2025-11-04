@@ -340,7 +340,7 @@ li {
 
 .hero--informasjon {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
-              url(../assets/img/hero-ball2.jpg) 50% 40%/cover no-repeat;
+              url(../assets/img/handball2.png) 40% 50%/cover no-repeat;
 }
 
 /* @media (min-aspect-ratio: 16/9) and (min-width: 1400px) {
