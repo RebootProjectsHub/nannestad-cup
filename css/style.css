@@ -28,7 +28,7 @@
   --section-padding: 6rem;
 
  @media screen and (width <= 500px) {
-  --section-padding: 3rem;
+  --section-padding: 2rem;
 }
 
   /* Typography */
