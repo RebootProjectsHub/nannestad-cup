@@ -27,6 +27,10 @@
   /* Padding between sections (top and bottom) */
   --section-padding: 6rem;
 
+ @media screen and (width <= 500px) {
+  --section-padding: 3rem;
+}
+
   /* Typography */
   --font-size-body: 1.05rem;
 
@@ -98,6 +102,13 @@ li {
 .section-title {
   font-size: 3rem;
   margin-block-end: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .section-title {
+  font-size: 2rem;
+  margin-block-end: 1rem;
+}
 }
 
 .section-intro {
@@ -597,6 +608,12 @@ li {
 @media screen and (width <= 900px) {
   .footer__inner {
   grid-template-columns: 1fr 1fr;
+}
+}
+
+@media screen and (width <= 500px) {
+  .footer__inner {
+  grid-template-columns: 1fr;
 }
 }
 
