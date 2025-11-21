@@ -403,7 +403,12 @@ li {
 
 /* ========== ABOUT SECTION ========== */
 .about {
-  background-color: var(--color-bg-light);
+  /* background-color: var(--color-bg-light); */
+}
+
+.about__title,
+.about__intro {
+  text-align: center;
 }
 
 .about__cards {
@@ -456,6 +461,9 @@ li {
 .about__card:hover .about__card-bg {
   transform: scale(1.1);
 }
+
+/* ========== PHOTOS SECTION ========== */
+
 
 /* ========== CLASSES SECTION ========== */
 .classes__table {
@@ -589,6 +597,7 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
   gap: 5rem;
   align-items: center;
+  justify-items: center;
 }
 
 /* ========== FOOTER SECTION ========== */
