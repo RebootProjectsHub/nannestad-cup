@@ -37,7 +37,9 @@
   --font-size-xl: 3rem;
   --font-size-lg: 1.15rem;
   --font-size-md: 1rem;     /* Font size for footer text */
-  --font-size-sm: 0.85rem;  /* Font size for header text, table text, notes, buttons) */
+  --font-size-sm: 0.95rem;  /* Font size for info box */
+  --font-size-xs: 0.85rem;  /* Font size for header text, table text, notes, buttons) */
+
 
   --font-heading: "Oswald", sans-serif;
   --font-uppercase: "Oswald", sans-serif;
@@ -46,6 +48,7 @@
   /* Border radius */
   --border-radius-img: 10px;
   --border-radius-card: 10px;
+  --border-radius-info-box: 6px;
   --border-radius-btn: 25px;
 
 }
@@ -122,13 +125,42 @@ li {
   border-radius: var(--border-radius-card);
 }
 
+.section-note {
+  font-size: var(--font-size-sm);
+}
+
+.info-box {
+  padding-block-end: 3.5rem;
+}
+
+.info-box--grey-section-bg {
+  background: var(--color-bg-light);
+}
+
+.info-box--white-section-bg {
+  background: var(--color-bg-white);
+}
+
+.info-box__content {
+  /* font-style: italic; */
+  background: var(--color-bg-light-green); /* мягкий зелёный, совпадает с карточками */
+  border-left: 3px solid var(--color-text-accent);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--border-radius-info-box);
+  font-size: var(--font-size-sm);
+}
+
+.text-semibold {
+  font-weight: 600;
+}
+
 .btn {
   display: inline-block;
   max-width: 400px;
   text-align: center;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   padding: 1rem 1.5rem;
 }
 
@@ -228,7 +260,7 @@ li {
   font-family: var(--font-uppercase);
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -301,7 +333,7 @@ li {
   font-family: var(--font-uppercase);
   letter-spacing: .05rem;
   text-transform: uppercase;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 500;
   transition: background-color .25s ease, color .25s ease;
 }
@@ -474,7 +506,7 @@ li {
 .classes__table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .classes__table th,
@@ -495,10 +527,6 @@ li {
   transition: background-color 0.2s ease;
 }
 
-.classes__note {
-  font-size: var(--font-size-sm);
-}
-
 
 /* ========== FESTIVAL SECTION ========== */
 .festival {
@@ -508,7 +536,7 @@ li {
 .festival__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: var(--grid-gap);
   align-items: center;
 }
 
@@ -528,7 +556,7 @@ li {
 .feature__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: var(--grid-gap);
   align-items: center;
 }
 
@@ -568,7 +596,17 @@ li {
   flex-direction: column;
 }
 
-.contact__link {
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__link-title {
+  font-weight: 600;
+}
+
+.contact__link a {
   text-decoration: underline;
 }
 
@@ -703,7 +741,7 @@ li {
 }
 
 .footer__bottom {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .footer__bottom-link {
@@ -774,6 +812,7 @@ li {
   margin-block-end: 2.5rem;
 }
 
+
 .signup__intro {
   margin-block-end: 3rem;
 }
@@ -804,7 +843,7 @@ li {
 
 .signup__note {
   margin-block-start: 1rem;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 
@@ -917,11 +956,7 @@ li {
 }
 
 .parking__note {
-  font-weight: 600;
-  padding: 2rem;
-  background-color: var(--color-bg-white);
-  border-radius: var(--border-radius-card);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  font-style: italic;
 }
 
 .parking__note-icon {
@@ -951,7 +986,7 @@ li {
 .rules__table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .rules__table td,
@@ -1035,21 +1070,26 @@ li {
 .program-day__title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--color-accent, #2e8b57);
+  margin-block-end: 1rem;
+}
+
+.program-day__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .program-day__list li {
-  font-size: var(--font-size-md);
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  font-size: var(--font-size-sm);
+  list-style-type: disc;
+  list-style-position: inside; 
+  /* list-style-type: disc; */
+  /* padding: 0.5rem 0;
+  border-bottom: 1px solid #eee; */
 }
 
-.program-day__list time {
-  display: inline-block;
-  padding-inline-end: 0.4rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
+.program-day__list li::marker {
+  font-size: var(--font-size-sm);
 }
 
 /* --- Activities block --- */
@@ -1121,15 +1161,57 @@ li {
 }
 
 .activity-item__note {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   margin-block-start: 1rem;
 }
 
 /* =================================== */
 /* =========== JUDGES PAGE =========== */
 /* =================================== */
+.judges-info {
+  background: var(--color-bg-light);
+}
 
-.judges-info__grid {
+/* .judges-contact {
+  background: var(--color-bg-light);
+} */
+
+.judges-contact__inner,
+.judges-info__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gap);
+  align-items: center;
+}
+
+@media (max-width: 860px){
+  .judges-contact__inner,
+  .judges-info__inner { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+.judges-contact__image,
+.judges-info__image {
+  border-radius: var(--border-radius-img);
+  aspect-ratio: 1.2;
+  object-fit: cover;
+}
+
+.judges-contact__text-wrapper,
+.judges-info__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.judges-info__item-link,
+.judges-contact__link {
+  text-decoration: underline;
+}
+
+/* .judges-info__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
@@ -1150,10 +1232,19 @@ li {
   margin-block-end: 1rem;
 }
 
+.judges-info__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.judges-info__item-link {
+  text-decoration: underline;
+}
+
 .judges-info__btn {
   margin-block-start: 1.5rem;
 }
-
 
 .judges-info__btn {
   width: auto;
@@ -1163,7 +1254,7 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--grid-gap);
-}
+} */
 
 
 
