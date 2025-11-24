@@ -435,7 +435,7 @@ li {
 
 /* ========== ABOUT SECTION ========== */
 .about {
-  /* background-color: var(--color-bg-light); */
+  background-color: var(--color-bg-light);
 }
 
 .about__title,
@@ -631,11 +631,18 @@ li {
 }
 
 .partners__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-  gap: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
   align-items: center;
-  justify-items: center;
+  column-gap: 5rem;
+  row-gap: 3.5rem;
+}
+.partners__grid img {
+  flex: 0 1 200px; 
+  max-width: 220px; 
+  height: auto;
+  display: block;
 }
 
 /* ========== FOOTER SECTION ========== */
