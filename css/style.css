@@ -26,14 +26,13 @@
   --grid-gap: 5rem;
   /* Padding between sections (top and bottom) */
   --section-padding: 6rem;
-
- @media screen and (width <= 500px) {
-  --section-padding: 2rem;
-}
+   /* Margin bottom for intro section (text after section title) */
+  --intro-text-margin-bottom: 2.7rem;
 
   /* Typography */
   --font-size-body: 1.05rem;
 
+  --font-size-xxl: 4rem;
   --font-size-xl: 3rem;
   --font-size-lg: 1.15rem;
   --font-size-md: 1rem;     /* Font size for footer text */
@@ -51,6 +50,47 @@
   --border-radius-info-box: 6px;
   --border-radius-btn: 25px;
 
+}
+
+@media (max-width: 1024px) {
+  :root {
+    
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 5rem;
+    --intro-text-margin-bottom: 2.5rem;
+    --grid-gap: 3rem;
+
+    --card-padding: 2.5rem;
+
+    --font-size-body: 0.95rem;
+    --font-size-xxl: 3rem;
+    --font-size-xl: 2.2rem;
+    --font-size-lg: 1.05rem;
+    --font-size-sm: 0.9rem;
+    --font-size-xs: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3rem;
+    --intro-text-margin-bottom: 2.2rem;
+    --grid-gap: 2rem;
+
+    --card-padding: 2rem;
+
+    --font-size-body: 0.9rem;
+    --font-size-xxl: 2.5rem;
+    --font-size-xl: 2rem;
+    --font-size-lg: 1rem;
+    --font-size-md: 0.95rem;
+    --font-size-sm: 0.85rem;
+    --font-size-xs: 0.8rem;
+  }
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -103,19 +143,12 @@ li {
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: var(--font-size-xl);
   margin-block-end: 1.7rem;
 }
 
-@media (max-width: 500px) {
-  .section-title {
-  font-size: 2rem;
-  margin-block-end: 1rem;
-}
-}
-
 .section-intro {
-  margin-block-end: 2.7rem;
+  margin-block-end: var(--intro-text-margin-bottom);
 }
 
 .section-map {
@@ -423,7 +456,7 @@ li {
 }
 
 .hero-title--sub {
-  font-size: 4rem;
+  font-size: var(--font-size-xxl);
 }
 
 .hero__info {
@@ -456,6 +489,12 @@ li {
   overflow: hidden;
   cursor: pointer;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  .about__card {
+    height: 325px;
+  }
 }
 
 .about__card-bg {
@@ -517,6 +556,13 @@ li {
   text-align: left;
 }
 
+@media (max-width: 480px) {
+  .classes__table th,
+  .classes__table td {
+    padding: 0.8rem;
+  }
+}
+
 .classes__table th {
   background: #f7f7f7;
   font-weight: 600;
@@ -540,17 +586,25 @@ li {
   align-items: center;
 }
 
-@media (max-width: 860px){
-  .festival__inner { 
-    grid-template-columns: 1fr; 
-  }
-}
 
 .festival__image {
   border-radius: var(--border-radius-img);
   aspect-ratio: 1.2;
   object-fit: cover;
 }
+
+@media (max-width: 860px){
+  .festival__inner { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* @media (max-width: 480px){
+  .festival__image {
+  aspect-ratio: auto;
+  height: auto; 
+}
+} */
 
 /* ========== FEATURE (CrazyRace) SECTION ========== */
 .feature__inner {
@@ -560,17 +614,24 @@ li {
   align-items: center;
 }
 
-@media (max-width: 860px){
-  .feature__inner { 
-    grid-template-columns: 1fr; 
-  }
-}
-
 .feature__image {
   border-radius: var(--border-radius-img);
   aspect-ratio: 1.2;
   object-position: 20% 50%;
   object-fit: cover;
+}
+
+@media (max-width: 860px){
+  .feature__inner { 
+    grid-template-columns: 1fr; 
+  }
+  .feature__content {
+    order: 2;
+  }
+
+  .feature__image-wrapper {
+    order: 1;
+  }
 }
 
 /* ========== CONTACT SECTION ========== */
@@ -642,7 +703,41 @@ li {
   flex: 0 1 200px; 
   max-width: 220px; 
   height: auto;
-  display: block;
+}
+
+@media (max-width: 768px) {
+  .partners__grid {
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .partners__grid img {
+    /* flex: 0 0 calc(50% - 1rem); */
+    max-width: 150px;            
+  }
+}
+
+@media (max-width: 768px) {
+  .partners__grid {
+    column-gap: 2rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .partners__grid img {
+    max-width: 150px;            
+  }
+}
+
+@media (max-width: 410px) {
+  .partners__grid {
+    column-gap: 1.7rem;
+  }
+
+  .partners__grid img {
+    max-width: 120px;            
+  }
 }
 
 /* ========== FOOTER SECTION ========== */
@@ -659,15 +754,26 @@ li {
   margin-block-end: 5rem;
 }
 
-@media screen and (width <= 900px) {
+.footer__contact-link {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
   .footer__inner {
   grid-template-columns: 1fr 1fr;
 }
 }
 
-@media screen and (width <= 500px) {
+@media (max-width: 500px) {
   .footer__inner {
   grid-template-columns: 1fr;
+  gap: 3rem;
+}
+}
+
+@media (max-width: 460px) {
+  .footer {
+  padding-block: 4rem 3rem;
 }
 }
 
@@ -811,6 +917,23 @@ li {
   text-transform: uppercase;
 }
 
+@media (max-width: 480px) {
+  .page-nav__grid {
+    gap: 1rem;
+   }
+  .page-nav__item {
+    padding: 2rem 2rem;
+  }
+
+  .page-nav__icon {
+    font-size: 2.5rem;
+  }
+
+  .page-nav__label {
+    font-size: 1rem;
+  }
+}
+
 /* --- Signup block --- */ 
 .signup__grid {
   display: grid;
@@ -876,6 +999,10 @@ li {
   margin-block-end: 2.5rem;
 }
 
+.venues__map {
+  max-width: 100%;
+}
+
 
 .venues__list {
   display: flex;
@@ -897,6 +1024,19 @@ li {
   font-weight: 600;
   font-size: 1.4rem;
   margin-block-end: 0.3rem;
+}
+
+@media (max-width: 480px) {
+  .venues__inner {
+  grid-template-columns: 1fr;
+ }
+ .venues__map-wrapper {
+    order: 2;
+  }
+
+  .venues__content {
+    order: 1;
+  }
 }
 
 /* --- Accommodation block --- */ 
@@ -938,6 +1078,13 @@ li {
   gap: 0.6rem;
 }
 
+@media (max-width: 480px) {
+  .accommodation__content {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+}
+
 /* --- Parking block --- */ 
 .parking {
   background-color: var(--color-bg-light);
@@ -977,6 +1124,11 @@ li {
   border-radius: var(--border-radius-img);
 }
 
+@media (max-width: 480px) {
+  .parking__grid {
+  grid-template-columns: 1fr;
+}
+}
 
 /* ================================= */
 /* ========== RULES PAGE =========== */
@@ -1125,7 +1277,6 @@ li {
   border-radius: var(--border-radius-card);
   padding: 2rem;
   gap: 3rem;
-  
 }
 .activity-item:nth-of-type(1) .activity-item__content {
   background-color: var(--color-bg-light);
@@ -1136,7 +1287,7 @@ li {
 }
 
 .activity-item__title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-xl);
   margin-block-end: 1.5rem;
 }
 
@@ -1152,7 +1303,7 @@ li {
   aspect-ratio: 1.2;
   border-radius: var(--border-radius-img);
   object-fit: cover;
-  object-position: center;
+  max-width: 100%;
 }
 
 .activity-item__list {
@@ -1170,6 +1321,21 @@ li {
 .activity-item__note {
   font-size: var(--font-size-xs);
   margin-block-start: 1rem;
+}
+
+@media (max-width: 480px) {
+  .activity-item__content {
+  grid-template-columns: 1fr;
+  padding: 1.7rem;
+  gap: 1rem;
+}
+.activity-item__text {
+  padding: 0;
+}
+
+.activity-item__title {
+  /* text-align: center; */
+}
 }
 
 /* =================================== */
@@ -1191,13 +1357,6 @@ li {
   align-items: center;
 }
 
-@media (max-width: 860px){
-  .judges-contact__inner,
-  .judges-info__inner { 
-    grid-template-columns: 1fr; 
-  }
-}
-
 .judges-contact__image,
 .judges-info__image {
   border-radius: var(--border-radius-img);
@@ -1217,6 +1376,24 @@ li {
 .judges-contact__link {
   text-decoration: underline;
 }
+
+@media (max-width: 860px){
+  .judges-contact__inner,
+  .judges-info__inner { 
+    grid-template-columns: 1fr; 
+  }
+
+  .judges-info__image-wrapper {
+    order: 2;
+  }
+
+  .judges-info__content {
+    order: 1;
+  }
+
+}
+
+
 
 /* .judges-info__grid {
   display: grid;
