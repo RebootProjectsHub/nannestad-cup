@@ -20,40 +20,57 @@
 </head>
 
 <body>
-  <header class="header header--sticky" data-header>
-    <div class="container">
-      <div class="header__inner">
-        <a class="header__brand" href="index.html" aria-label="NannestadCup – Forside">
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a class="header__brand" href="./" aria-label="NannestadCup – Forside">
           <img class="header__logo" width="60px" src="./assets/img/logo_upd.png" alt="NannestadCup">
-          <!-- <span class="header__title">NannestadCup</span> -->
         </a>
-        <nav class="header__nav" id="primary-nav" aria-label="Hovedmeny">
-          <ul class="header__list">
-            <li class="header__item header__item--has-submenu">
-              <a class="header__link" href="#" aria-haspopup="true" aria-expanded="false">Om turneringen</a>
-              <i class="fa-light fa-chevron-down"></i>
-              <ul class="header__submenu">
-                <li class="header__submenu-item">
-                  <a href="./praktisk-info.html" class="header__submenu-link">Praktisk info</a>
-                </li>
-                <li class="header__submenu-item">
-                  <a href="./regler.html" class="header__submenu-link">Regler</a>
-                </li>
-                <li class="header__submenu-item">
-                  <a href="./dommere.html" class="header__submenu-link">Dommere</a>
-                </li>
-              </ul>
-            </li>
-            <li class="header__item"><a class="header__link" href="./program-og-aktiviteter.html">Program og aktiviteter</a></li>
-            <li class="header__item"><a class="header__link" href="https://www.profixio.com/app/nannestadcup-2026" target="_blank" rel="noopener">Påmelding</a></li>
-          </ul>
-        </nav>
+      </div>
+
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="dropdown__item nav__item">
+            <div class="nav__link">
+              Om turneringen <i class="fa-light fa-chevron-down dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu">
+              <li class="dropdown__menu-item">
+                <a href="./praktisk-info.html" class="dropdown__link">
+                  Praktisk info
+                </a>
+              </li>
+              <li class="dropdown__menu-item">
+                <a href="./regler.html" class="dropdown__link">
+                  Regler
+                </a>
+              </li>
+              <li class="dropdown__menu-item">
+                <a href="./dommere.html" class="dropdown__link">
+                  Dommere
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item"><a href="./program-og-aktiviteter.html" class="nav__link">Program og aktiviteter</a></li>
+
+          <li class="nav__item"><a href="https://www.profixio.com/app/nannestadcup-2026" class="nav__link" target="_blank" rel="noopener">Påmelding</a></li>
+        </ul>
+      </div>
+      <div class="nav__right">
         <a class="btn header__cta header__cta--contact btn--primary" href="./kontakt.html">
           Kontakt oss
         </a>
-
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-regular fa-bars nav__burger"></i>
+          <i class="fa-regular fa-xmark nav__close"></i>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
