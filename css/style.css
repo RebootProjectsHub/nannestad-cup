@@ -13,6 +13,7 @@
   --color-accent-2: linear-gradient(135deg, #e3f2e7 0%, #f6faf8 100%);
   --color-hover: rgba(46, 139, 87, 0.1);
   --color-hover-light:#49c28a;
+  --color-hover-text:#5CBF7B;
   --color-hover-extra-light:#f1f8f4;
 
 
@@ -231,24 +232,26 @@ li {
   z-index: -1;
 }
 
-.btn--primary:hover {
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 26px rgba(46, 139, 87, 0.5);
+  }
+
+  .btn--transparent:hover {
+    background: #F1FBF4;
+  }
 }
 
-.btn--transparent:hover {
-  background: #F1FBF4;
-}
 
-/* ========== HEADER SECTION ========== */
+/*=============== HEADER ===============*/
 .header {
-  /* background: #ffffff;  */
-  color: var(--color-text-light);
-  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  color: var(--color-text-light);
+  z-index: 100;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -259,139 +262,257 @@ li {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.header__inner {
+/* nav */
+.nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-block: 1rem;
-  min-height: 5rem;
+  height: 5rem;
 }
 
-.header__cta--contact {
-  padding: 0.7rem 1.5rem;
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
 }
 
-.header__list {
+.header__cta--contact {
+padding: 0.7rem 1.5rem;
+}
+
+.nav__right {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-@media (max-width: 728px){
-  .header__list {
-    display: none;
-  }
+.nav__toggle {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
 }
 
-.header__link {
-  padding: 10px;
+.nav__burger, 
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+
+.nav__link {
+  color: var(--color-text-light);
+  padding: 1.25rem 1.5rem;
   font-family: var(--font-uppercase);
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   font-size: var(--font-size-xs);
   font-weight: 500;
   transition: all 0.3s ease;
-}
-
-.header__item:hover {
-  color:#5CBF7B;
-  border-radius: 25px;
-}
-
-/* .header__item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition: width 0.3s ease;
-}
-
-.header__item:hover::after,
-.header__item:focus-visible::after {
-  width: 100%;
-} */
-
-.header__item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.header__item--has-submenu {
-  position: relative;
+@media (hover: hover) and (pointer: fine) {
+  .nav__link:hover {
+    color: var(--color-hover-text);
+  }
 }
 
-/* Drpdown menu - hover/focus on Informasjon */
-.header__submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
-  color: var(--color-text-dark);
-  background: var(--color-bg-light);
-  border-radius: var(--border-radius-card);
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(.5rem);
-  transition: opacity .2s ease, transform .2s ease;
-  z-index: 10;
+
+/* Navigation for mobile devices */
+@media (max-width: 920px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* height: calc(100vh - 3.5rem); */
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+
+    z-index: -1;
+  }
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .nav__list {
+    background-color: var(--color-bg-light);
+    padding-block-start: 100px;
+    padding-block-end: 2rem;
+  }
+
+  .nav__link {
+    color: var(--color-text-dark);
+  }
+
+  .dropdown__menu {
+    padding-inline: 1rem;
+  }
 }
 
-/* Hover / Focus on Informasjon - show menu */
-.header__item--has-submenu:hover > .header__submenu,
-.header__item--has-submenu:focus-within > .header__submenu {
+
+/* Show menu */
+.show-menu {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  pointer-events: initial;
 }
 
-/* Arrow dropdown for Informasjon menu item */
-.fa-chevron-down {
+/* Show icon */
+.show-icon {
+  color: var(--color-text-dark);
+}
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* dropdown */
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
   font-size: 0.7rem;
-  transition: color .25s ease;
+  transition: transform 0.25s, color 0.25s;
 }
 
-.header__submenu-link {
+.dropdown__link {
   display: block;
   padding: .95rem 1.65rem;
+  color: var(--color-text-dark);
   font-family: var(--font-uppercase);
   letter-spacing: .05rem;
   text-transform: uppercase;
   font-size: var(--font-size-xs);
   font-weight: 500;
-  transition: background-color .25s ease, color .25s ease;
+  transition: background-color .25s ease, color .25s ease; 
 }
 
-.header__submenu-item + .header__submenu-item {
-  border-top: 1px solid rgba(0,0,0,.085);
-}
-
-.header__submenu-link:hover,
-.header__submenu-link:focus-visible {
-  background-color: var(--color-hover);
-  color: #317a54;
-}
-
-/* For older versions of Safari (keeps the rounded corners visible on the first and last menu items
-   even if overflow: hidden doesn't work properly) */
-.header__submenu-item:first-child .header__submenu-link { 
+.dropdown__menu-item:first-child .dropdown__link {
   border-top-left-radius: var(--border-radius-card);
   border-top-right-radius: var(--border-radius-card);
 }
-.header__submenu-item:last-child .header__submenu-link { 
+
+.dropdown__menu-item:last-child .dropdown__link {
   border-bottom-left-radius: var(--border-radius-card);
   border-bottom-right-radius: var(--border-radius-card);
 }
 
+
+.dropdown__menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.dropdown__item.open .dropdown__menu {
+  max-height: 1000px;
+}
+.dropdown__item.open .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+.header.header--scrolled .nav__link {
+  color: var(--color-text-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Rotate dropdown icon */
+  .dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown__link:hover {
+  background-color: var(--color-hover);
+  color: #317a54;
+  }
+
+  .header.header--scrolled .nav__link:hover {
+    color: var(--color-hover-text);
+  }
+}
+
+/* breakpoints */
+
+/* For large devices */
+@media (min-width: 920px) {
+  .nav {
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 1rem;
+    justify-content: initial;
+    column-gap: 0.5rem;
+  }
+
+  .dropdown__item {
+    position: relative;
+  }
+
+  .dropdown__menu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 80%;
+    background-color: var(--color-bg-light);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+    border-radius: var(--border-radius-card);
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  }
+
+  .dropdown__menu-item + .dropdown__menu-item {
+    border-top: 1px solid rgba(0, 0, 0, .085);
+  }
+
+  /* Show dropdown menu */
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    /* top: 5.5rem; */
+    max-height: 1000px;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  .dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+  }
+}
 
 
 /* ========== HERO SECTION ========== */
@@ -449,7 +570,7 @@ li {
   font-size: 5.5rem;
 }
 
-@media screen and (width <= 900px) {
+@media (width <= 900px) {
   .hero__title {
   font-size: 2rem;
 }
@@ -529,12 +650,11 @@ li {
   color: var(--color-text-light);
 }
 
-.about__card:hover .about__card-bg {
-  transform: scale(1.1);
+@media (hover: hover) and (pointer: fine) {
+  .about__card:hover .about__card-bg {
+    transform: scale(1.1);
+  }
 }
-
-/* ========== PHOTOS SECTION ========== */
-
 
 /* ========== CLASSES SECTION ========== */
 .classes__table {
@@ -568,11 +688,12 @@ li {
   font-weight: 600;
 }
 
-.classes__table tr:hover td {
-  background-color: var(--color-hover);
-  transition: background-color 0.2s ease;
+@media (hover: hover) and (pointer: fine) { 
+  .classes__table tr:hover td {
+    background-color: var(--color-hover);
+    transition: background-color 0.2s ease;
+  }
 }
-
 
 /* ========== FESTIVAL SECTION ========== */
 .festival {
@@ -817,10 +938,12 @@ li {
   transition: color 0.3s ease;
 }
 
-.footer__contact-link:hover,
-.footer__nav-link:hover,
-.footer__bottom-link:hover  {
-  color: var(--color-hover-light);
+@media (hover: hover) and (pointer: fine) { 
+  .footer__contact-link:hover,
+  .footer__nav-link:hover,
+  .footer__bottom-link:hover  {
+    color: var(--color-hover-light);
+  }
 }
 
 .footer__icon {
@@ -849,8 +972,10 @@ li {
   transition: background-color 0.3s ease;
 }
 
-.footer__social-link:hover{
-  background-color: var(--color-hover-light);
+@media (hover: hover) and (pointer: fine) { 
+  .footer__social-link:hover{
+    background-color: var(--color-hover-light);
+  }
 }
 
 .footer__bottom {
@@ -892,13 +1017,15 @@ li {
   transition: background-color 0.25s ease;
 }
 
-.page-nav__item:hover {
-  background-color: var(--color-hover-extra-light);
-}
+@media (hover: hover) and (pointer: fine) { 
+  .page-nav__item:hover {
+    background-color: var(--color-hover-extra-light);
+  }
 
-.page-nav__item:hover .page-nav__icon,
-.page-nav__item:hover .page-nav__label {
-  color: var(--color-text-accent);
+ .page-nav__item:hover .page-nav__icon,
+ .page-nav__item:hover .page-nav__label {
+    color: var(--color-text-accent);
+  }
 }
 
 .page-nav__icon,
@@ -1171,9 +1298,11 @@ li {
   font-weight: 600;
 }
 
-.rules__table tr:hover td {
-  background-color: var(--color-hover);
-  transition: background-color 0.2s ease;
+@media (hover: hover) and (pointer: fine) {
+  .rules__table tr:hover td {
+    background-color: var(--color-hover);
+    transition: background-color 0.2s ease;
+  }
 }
 
 .rules__grid {

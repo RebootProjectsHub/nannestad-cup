@@ -20,45 +20,56 @@
 </head>
 
 <body>
-  <header class="header header--sticky" data-header>
-    <div class="container">
-      <div class="header__inner">
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
         <a class="header__brand" href="/" aria-label="NannestadCup – Forside">
           <img class="header__logo" width="60px" src="./assets/img/logo_upd.png" alt="NannestadCup">
-          <!-- <span class="header__title">NannestadCup</span> -->
         </a>
-        <!-- <button class="header__burger" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-          <span class="burger__bar"></span>
-          <span class="burger__bar"></span>
-          <span class="burger__bar"></span>
-        </button> -->
-        <nav class="header__nav" id="primary-nav" aria-label="Hovedmeny">
-          <ul class="header__list">
-            <li class="header__item header__item--has-submenu">
-              <a class="header__link" href="#" aria-haspopup="true" aria-expanded="false">Om turneringen</a>
-              <i class="fa-light fa-chevron-down"></i>
-              <ul class="header__submenu">
-                <li class="header__submenu-item">
-                  <a href="./praktisk-info.html" class="header__submenu-link">Praktisk info</a>
-                </li>
-                <li class="header__submenu-item">
-                  <a href="./regler.html" class="header__submenu-link">Regler</a>
-                </li>
-                <li class="header__submenu-item">
-                  <a href="./dommere.html" class="header__submenu-link">Dommere</a>
-                </li>
-              </ul>
-            </li>
-            <li class="header__item"><a class="header__link" href="./program-og-aktiviteter.html">Program og aktiviteter</a></li>
-            <li class="header__item"><a class="header__link" href="https://www.profixio.com/app/nannestadcup-2026" target="_blank" rel="noopener">Påmelding</a></li>
-          </ul>
-        </nav>
+      </div>
+
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="dropdown__item nav__item">
+            <div class="nav__link">
+              Om turneringen <i class="fa-light fa-chevron-down dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu">
+              <li class="dropdown__menu-item">
+                <a href="#" class="dropdown__link">
+                  <i class="ri-pie-chart-line"></i> Praktisk info
+                </a>
+              </li>
+              <li class="dropdown__menu-item">
+                <a href="#" class="dropdown__link">
+                  <i class="ri-arrow-up-down-line"></i> Regler
+                </a>
+              </li>
+              <li class="dropdown__menu-item">
+                <a href="#" class="dropdown__link">
+                  <i class="ri-arrow-up-down-line"></i> Dommere
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item"><a href="#" class="nav__link">Program og aktiviteter</a></li>
+
+          <li class="nav__item"><a href="#" class="nav__link">Påmelding</a></li>
+        </ul>
+      </div>
+      <div class="nav__right">
         <a class="btn header__cta header__cta--contact btn--primary" href="./kontakt.html">
           Kontakt oss
         </a>
-
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-regular fa-bars nav__burger"></i>
+          <i class="fa-regular fa-xmark nav__close"></i>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
@@ -118,12 +129,6 @@
             </a>
           </div>
 
-
-          <!-- <div class="about__actions">
-            <a class="about__btn btn--primary" href="./pages/informasjon.html">
-              Les mer
-            </a>
-          </div> -->
         </div>
       </div>
     </section>
