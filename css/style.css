@@ -36,6 +36,7 @@
   --font-size-hero-subtitle: 1.7rem;
   --font-size-nav-cards-title: 1.7rem;
   --font-size-card-title: 1.9rem;
+  --font-size-lg-card-title: 2.8rem;
 
   --font-size-xxl: 4rem;
   --font-size-xl: 3rem;
@@ -74,8 +75,9 @@
     --font-size-body: 0.95rem;
     --font-size-hero-title: 3.8rem;
     --font-size-hero-subtitle: 1.4rem;
-    --font-size-nav-cards-title: 1.5rem;
+    --font-size-nav-cards-title: 1.6rem;
     --font-size-card-title: 1.7rem;
+    --font-size-lg-card-title: 1.9rem;
 
     --font-size-xxl: 3rem;
     --font-size-xl: 2.2rem;
@@ -96,7 +98,8 @@
     --font-size-body: 0.9rem;
     --font-size-hero-title: 3.2rem;
     --font-size-hero-subtitle: 1.25rem;
-     --font-size-card-title: 1.5rem;
+    --font-size-card-title: 1.5rem;
+    --font-size-lg-card-title: 1.5rem;
 
 
     --font-size-xxl: 2.5rem;
@@ -218,6 +221,14 @@ li {
   padding: 1rem 1.5rem;
 }
 
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.9rem 1.4rem 0.8rem;
+  }
+}
+
+
 .btn--primary {
   background: var(--color-accent);
   color: var(--color-text-light); 
@@ -301,8 +312,18 @@ li {
   align-items: center;
 }
 
+.header__logo {
+  width:60px;
+}
+
 .header__cta--contact {
 padding: 0.7rem 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .header__cta--contact {
+    padding: 0.7rem 1.2rem;
+  }
 }
 
 .nav__right {
@@ -366,7 +387,7 @@ padding: 0.7rem 1.5rem;
     pointer-events: none;
     opacity: 0;
     transition: top .4s, opacity .3s;
-
+    
     z-index: -1;
   }
   .nav__menu::-webkit-scrollbar {
@@ -374,6 +395,7 @@ padding: 0.7rem 1.5rem;
   }
   .nav__list {
     background-color: var(--color-bg-light);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
     padding-block-start: 100px;
     padding-block-end: 2rem;
   }
@@ -1245,10 +1267,14 @@ padding: 0.7rem 1.5rem;
 }
 
 @media (max-width: 480px) {
-.venues__name {
+  .venues__name {
     font-size: 1.2rem;
   }
+  .venues__map {
+    height: 300px;
+  } 
 }
+
 
 /* --- Accommodation block --- */ 
 .accommodation__content {
@@ -1527,7 +1553,7 @@ padding: 0.7rem 1.5rem;
 }
 
 .activity-item__title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg-card-title);
   margin-block-end: 1.5rem;
 }
 
@@ -1565,17 +1591,17 @@ padding: 0.7rem 1.5rem;
 
 @media (max-width: 768px) {
   .activity-item__content {
-  grid-template-columns: 1fr;
-  padding: 1.7rem;
-  gap: 1rem;
-}
-.activity-item__text {
-  padding: 0;
-}
-
-.activity-item__title {
-  /* text-align: center; */
-}
+    grid-template-columns: 1fr;
+    padding: 1.7rem;
+    gap: 1rem;
+  }
+  .activity-item__text {
+    padding: 0;
+    order: 2;
+  }
+  .activity-item__image {
+    order: 1;
+  }
 }
 
 /* =================================== */
