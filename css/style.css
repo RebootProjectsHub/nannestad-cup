@@ -1573,6 +1573,9 @@ padding: 0.7rem 1.5rem;
 }
 
 .activity-item__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   font-size: var(--font-size-md);
 }
 
@@ -1581,12 +1584,12 @@ padding: 0.7rem 1.5rem;
 }
 
 .activity-item__intro {
-  margin-block-end: 1rem;
+  margin-block-end: 1.2rem;
 }
 
 .activity-item__note {
   font-size: var(--font-size-xs);
-  margin-block-start: 1rem;
+  margin-block-start: 1.2rem;
 }
 
 @media (max-width: 768px) {
