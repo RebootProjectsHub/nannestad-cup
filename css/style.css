@@ -755,6 +755,7 @@ padding: 0.7rem 1.5rem;
   border-radius: var(--border-radius-img);
   aspect-ratio: 1.2;
   object-fit: cover;
+  height: auto;
 }
 
 @media (max-width: 860px){
@@ -783,6 +784,7 @@ padding: 0.7rem 1.5rem;
   aspect-ratio: 1.2;
   object-position: 20% 50%;
   object-fit: cover;
+  height: auto;
 }
 
 @media (max-width: 860px){
