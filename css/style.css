@@ -624,6 +624,12 @@ padding: 0.7rem 1.5rem;
   margin-block-end: 2.5rem;
 }
 
+@media (max-width: 720px) {
+  .hero__video {
+    content: url("../assets/img/hero_poster_1280-min.jpg");
+  }
+}
+
 /* ========== ABOUT SECTION ========== */
 .about {
   background-color: var(--color-bg-light);
