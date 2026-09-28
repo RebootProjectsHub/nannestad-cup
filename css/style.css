@@ -1473,7 +1473,7 @@ padding: 0.7rem 1.5rem;
 .program__days {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 1040px) {
